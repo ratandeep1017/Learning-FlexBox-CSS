@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlexBox Crash Course</title>
+    <style>
+        /* reset */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+            color: #333;
+            /* background: #a1c3ff; */
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        hr {
+            margin-bottom: 15px;
+            border-color: white;
+
+        }
+
+        h1,
+        h2 {
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        .navbar {
+            background-color: #6497ee;
+            color: white;
+            height: 60px;
+        }
+
+        .navbar a {
+            color: white;
+            font-size: 18px;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+        }
+
+        .navbar ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .logo {
+            font-size: 2rem;
+        }
+
+
+        /* header */
+        .header {
+            background-color: #0151cc;
+            color: white;
+            min-height: 400px;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            line-height: 1.2;
+        }
+
+        .header img {
+            /* max-width: 500px; */
+            width: 400px;
+            height: 400px;
+            margin: 10px;
+            animation: zoom-in-zoom-out 1s ease infinite;
+
+        }
+
+        /* .header img:hover {
+            transition: transform .5s ease;
+            transform: scale(0.9);
+        } */
+
+        @keyframes zoom-in-zoom-out {
+            0% {
+                scale: 100%;
+            }
+
+            50% {
+                scale: 90%;
+            }
+
+            100% {
+                scale: 100%;
+            }
+        }
+
+        .header .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 50px;
+        }
+
+        .boxes .container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 50px;
+
+        }
+
+        .box {
+            flex: 1;
+            text-align: center;
+
+            background-color: #0a51cc;
+            color: white;
+            border-radius: 10px;
+            margin: 20px 20px;
+            padding: 20px 20px;
+            border-color: white;
+        }
+
+        .box:hover,
+        .box:hover hr {
+            color: #0151cc;
+            background: white;
+            border: 1px solid #0151cc;
+            transition: color 0.5s ease, background-color 0.5s ease;
+        }
+
+
+
+        /* media queries */
+
+        @media (max-width:768px) {
+            .header .container {
+                flex-direction: column;
+                padding-top: 20px;
+                text-align: center;
+            }
+
+            .navbar .container {
+                justify-content: center;
+
+            }
+
+            .boxes .container {
+                display: block;
+            }
+
+            .header img {
+                width: 250px;
+                height: 250px;
+
+            }
+
+            .logo {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">Flexbox</div>
+            <ul>
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container">
+            <div>
+                <h1>Flexbox Crash Course</h1>
+                <p class="main-p-tag">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum quibusdam, nemo
+                    molestiae pariatur
+                    cumque omnis. Velit saepe consequatur ut, deleniti dicta dolore tenetur, illum facilis soluta
+                    inventore odit laboriosam vitae. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque
+                    quae natus repellat consequuntur dignissimos corrupti porro libero, mollitia animi, veniam soluta
+                    dolor quasi velit praesentium dicta laborum distinctio amet vitae? lorem</p>
+            </div>
+            <img src="grid.svg" alt="" />
+        </div>
+    </header>
+
+
+    <!-- SECTION -->
+    <section class="boxes">
+        <div class="container">
+            <div class="box">
+                <h2>Alignment and space</h2>
+                <hr>
+                <p>Flexbox allows us to align and distribute items along the main axis (horizontal) or cross axis
+                    (vertical). We can also control the spacing between items using the gap property.</p>
+            </div>
+            <div class="box">
+                <h2>Tricky Positioning</h2>
+                <hr>
+                <p>Flexbox can be tricky when dealing with tricky positioning scenarios, such as centering items
+                    horizontally or vertically. We can use the justify-content and align-items properties to achieve
+                    these effects.</p>
+            </div>
+            <div class="box">
+                <h2>Responsive design</h2>
+                <hr>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi facilis odit, commodi repellat minima
+                    nesciunt! Odio reprehenderit et est vel dolorum quisquam quasi perferendis minima eum, ipsa
+                    laboriosam ullam aperiam.</p>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
